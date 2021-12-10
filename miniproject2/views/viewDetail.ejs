@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>View Detail</title>
+		<link rel="stylesheet" href="style.css">
+
+	</head>
+<body>
+	<H1>View Detail</H1>
+		<a href="/home" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Home</button></a>
+	<a href="logout" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Logout</button></a>
+	<hr><br>
+    <img src=" data:<%=Inventory[0].mimetype%>;base64, <%=Inventory[0].photo%>" style="width:100%">
+	<table border="0" >
+		<tr><th> name: </th><td> <%=Inventory[0].name%> </td></tr>
+		<tr><th> type: </th><td> <%=Inventory[0].type%> </td></tr>
+		<tr><th> quantity: </th><td> <%=Inventory[0].quantity%> </td></tr>		
+		<tr><th>street: </th><td> <%=Inventory[0].address.street%> </td></tr>
+		<tr><th>building: </th><td> <%=Inventory[0].address.building%> </td></tr>
+		<tr><th>zipcode: </th><td> <%=Inventory[0].address.zipcode%> </td></tr>
+		<tr><th> coord: </th><td> [ <%=Inventory[0].address.coord[0]%>, <%=Inventory[0].address.coord[1]%> ] </td></tr><tr><td><a href="/map?lat=<%=Inventory[0].address.coord[0]%>&lon=<%=Inventory[0].address.coord[1]%>">Map</a></td><td></td></tr>		
+	</table><br>
+
+	<table border="0" >
+	        <tr><td><a href="/updateInventory?_id=<%=Inventory[0]._id%>" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Update Inventory</button>
+	</a></td>
+	<td><a href="/deleteInventory?_id=<%=Inventory[0]._id%>&downer=<%=Inventory[0].owner%>" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Delete Inventory</button>
+	</a></td>
+	</tr>
+	</table>
+
+	<hr><br>
+
+</body>
+
+</html>

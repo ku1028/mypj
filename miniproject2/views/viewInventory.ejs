@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>viewInventory</title>
+	<link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+	<H1>View Inventory</H1>
+	<a href="/home" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Home</button></a>
+	<a href="logout" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Logout</button></a>
+	<hr><br>
+
+	<table border="1" style="width:95%">
+        	<tr><th>Showing <%= Inventory.length %> document(s)</th></tr>       
+            <% for (i in Inventory) { %>
+                <tr><td><a href=/display?_id=<%=Inventory[i]._id%>><%=Inventory[i].name%></a></td></tr>
+            <% } %>
+        </table>
+    </body>
+</html>

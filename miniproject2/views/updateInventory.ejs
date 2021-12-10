@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>updateInventory</title>
+	<link rel="stylesheet" href="style.css">
+
+	<head>
+	<body>
+		<H1>Update Inventory</H1>
+		<a href="/home" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Home</button></a>
+	<a href="logout" style="text-decoration: none"><button class="w3-btn w3-section w3-teal w3-ripple">Logout</button></a>
+		<hr><br>
+		<table border="0" >
+	    <form action="updateResult" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="id" value=<%=Inventory[0]._id%>>
+<input type="hidden" name="owner" value=<%=Inventory[0].owner%>>
+		<tr><th> name: </th><td> <input type="text" name="name" minlength=1 value=<%=Inventory[0].name%>> </td></tr>
+		<tr><th> borough: </th><td> <input type="text" name="borough" value=<%=Inventory[0].borough%>> </td></tr>
+		<tr><th> cuisine: </th><td> <input type="text" name="cuisine" value=<%=Inventory[0].cuisine%>> </td></tr>
+		<tr><th> photo: </th><td> <input type="file" name="filetoupload" value=<%=Inventory[0].photo%>> </td></tr>
+		<tr><th>street: </th><td> <input type="text" name="street" value=<%=Inventory[0].address.street%>> </td></tr>
+		<tr><th>building: </th><td> <input type="text" name="building" value=<%=Inventory[0].address.building%>> </td></tr>
+		<tr><th>zipcode: </th><td> <input type="text" name="zipcode" value=<%=Inventory[0].address.zipcode%>> </td></tr>
+		<tr><th> coord(lon.): </th><td> <input type="number" step="any" name="coordlon" value=<%=Inventory[0].address.coord[0]%>> </td></tr>
+		<tr><th> coord(lat.): </th><td> <input type="number" step="any" name="coordlat" value=<%=Inventory[0].address.coord[1]%>> </td></tr>
+		<tr><td> <input type="submit" value="update">  </td><td></td></tr>
+	    </form>
+		</table>
+	</body>
+</html>
